@@ -20,7 +20,14 @@ public class GestorNotas {
 
     //  implementar listado
     public void listarNotas() {
-        // implementar en la fase correspondiente
+        if (notas.isEmpty()) {
+            System.out.println("No hay notas guardadas.");
+        } else {
+            System.out.println("\n--- LISTA DE NOTAS ---");
+            for (Nota nota : notas) {
+                System.out.println(nota);
+            }
+        }
     }
 
     //  implementar filtro
