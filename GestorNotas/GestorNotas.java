@@ -11,7 +11,11 @@ public class GestorNotas {
 
     //  implementar alta de notas
     public void crearNota(String titulo, String contenido, boolean importante) {
-        // implementar en la fase correspondiente
+        // Generamos un ID automático basado en la cantidad de notas
+        int id = notas.size() + 1;
+        Nota nuevaNota = new Nota(id, titulo, contenido, importante);
+        notas.add(nuevaNota);
+        System.out.println("¡Nota creada con éxito con el ID: " + id + "!");
     }
 
     //  implementar listado
