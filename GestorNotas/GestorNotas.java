@@ -9,17 +9,17 @@ public class GestorNotas {
         this.notas = new ArrayList<>();
     }
 
-    // TODO: implementar alta de notas
+    //  implementar alta de notas
     public void crearNota(String titulo, String contenido, boolean importante) {
         // implementar en la fase correspondiente
     }
 
-    // TODO: implementar listado
+    //  implementar listado
     public void listarNotas() {
         // implementar en la fase correspondiente
     }
 
-    // TODO: implementar filtro
+    //  implementar filtro
     public void listarImportantes() {
         // implementar en la fase correspondiente
     }
