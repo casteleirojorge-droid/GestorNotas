@@ -20,7 +20,32 @@ public class GestorNotas {
 
     //  implementar listado
     public void listarNotas() {
-        // implementar en la fase correspondiente
+        if (notas.isEmpty()) {
+            System.out.println("No hay notas guardadas.");
+        } else {
+            System.out.println("\n--- LISTA DE NOTAS ---");
+            for (Nota nota : notas) {
+                System.out.println(nota);
+            }
+        }
+    }
+    public void listarNotasImportantes() {
+        if (notas.isEmpty()) {
+            System.out.println("No hay notas guardadas.");
+        } else {
+            System.out.println("\n--- LISTA DE NOTAS IMPORTANTES ---");
+            boolean hayImportantes = false;
+            for (Nota nota : notas) {
+                // Si tu método "getter" se llama distinto (ej. getImportante()), cámbialo aquí
+                if (nota.isImportante()) {
+                    System.out.println(nota);
+                    hayImportantes = true;
+                }
+            }
+            if (!hayImportantes) {
+                System.out.println("No tienes ninguna nota marcada como importante.");
+            }
+        }
     }
 
     //  implementar filtro
