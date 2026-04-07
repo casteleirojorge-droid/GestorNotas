@@ -21,12 +21,33 @@ public class Main {
 
             switch (opcion) {
                 case "1":
-                    System.out.print("Introduce el título: ");
-                    String titulo = scanner.nextLine();
-                    System.out.print("Introduce el contenido: ");
-                    String contenido = scanner.nextLine();
-                    System.out.print("¿Es importante? (s/n): ");
-                    boolean importante = scanner.nextLine().trim().equalsIgnoreCase("s");
+                    String titulo = "";
+                    while (titulo.trim().isEmpty()) {
+                        System.out.print("Introduce el título: ");
+                        titulo = scanner.nextLine();
+                        if (titulo.trim().isEmpty()) System.out.println("Error: El título no puede estar vacío.");
+                    }
+
+                    String contenido = "";
+                    while (contenido.trim().isEmpty()) {
+                        System.out.print("Introduce el contenido: ");
+                        contenido = scanner.nextLine();
+                        if (contenido.trim().isEmpty()) System.out.println("Error: El contenido no puede estar vacío.");
+                    }
+
+                    String impStr = "";
+                    boolean importante = false;
+                    while (!impStr.equalsIgnoreCase("s") && !impStr.equalsIgnoreCase("n")) {
+                        System.out.print("¿Es importante? (s/n): ");
+                        impStr = scanner.nextLine().trim();
+                        if (impStr.equalsIgnoreCase("s")) {
+                            importante = true;
+                        } else if (impStr.equalsIgnoreCase("n")) {
+                            importante = false;
+                        } else {
+                            System.out.println("Error: Respuesta no válida. Introduce 's' o 'n'.");
+                        }
+                    }
 
                     gestor.crearNota(titulo, contenido, importante);
                     break;
